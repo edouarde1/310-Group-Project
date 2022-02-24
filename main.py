@@ -1,4 +1,4 @@
-from data_utils import load_data
+from naive_bot import load_data
 
 # Get Bot Dictionary
 keywords = load_data("keywords.csv")
@@ -6,13 +6,17 @@ keywords = load_data("keywords.csv")
 while True:
     response = input("\n \n Welcome to the Atlantis Chat Bot: \n \n Press 1 to Begin \n \n Press q to Quit \n \n Enter: ")
 
+    # Break and begin bot program 
     if response == '1':
         break
 
+# Bot Program 
 while True: 
     response = input("\n \n")
+
     reponse_array = response.lower().split(" ")
 
+    # q to quit program 
     if response == 'q':
         break 
     

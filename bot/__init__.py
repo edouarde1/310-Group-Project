@@ -1,6 +1,6 @@
 
 from contextlib import nullcontext
-from data_utils import load_data
+from naive_bot import load_data
     
 def atlantis_bot():
     def __init__(self):
