@@ -6,24 +6,20 @@ import csv
 
 
 def load_data(filename):
-    
-    with open ("keywords.csv", "r") as file:
-        
+    with open ("keywords.csv", "r", encoding="utf-8", errors="ignore") as file:
         bot_dict = dict() 
         
         # Read input from a csv 
-        for i, row in enumerate(file):
-           
-           # Skip column headers 
-            if (i == 0):
-                continue
-
-            # Construct a dictionary 
-            key, value = row.split(",")
-            bot_dict[key] = value
+        csv_contents = csv.reader(file, delimiter = ",")
         
+        for i, row in enumerate(csv_contents):
+            # Ignor Headers
+            if i == 0:
+                continue
+         
+            bot_dict[row[0]] = row[1]
+            
     return bot_dict
 
     
 
-    return 0
