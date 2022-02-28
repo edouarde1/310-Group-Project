@@ -10,6 +10,12 @@ Our project is going to be an interactive chatbot that takes on the role of a wo
 2. Open the repo using VSCode or Terminal 
 3. Run main.py 
 
+
+## Dataset 
+
+#### keywords.csv 
+The dataset was created by our group. There are a column of keywords and a column of responses. Each keyword corresponds to exactly one response. 
+
 ## Classes and Functions 
 
 ### Naive Bot 
