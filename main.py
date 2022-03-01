@@ -1,4 +1,4 @@
-from naive_bot import load_data
+from naive_bot.naive_bot import load_data, get_response
 
 # Get Bot Dictionary
 keywords = load_data("keywords.csv")
@@ -11,30 +11,11 @@ while True:
         break
 
 # Bot Program 
-while True: 
+while True:
     response = input("\n \n")
-
-    reponse_array = response.lower().split(" ")
-
-    # q to quit program 
-    if response == 'q':
-        break 
-    
-    match = False
-
-    for i, word in enumerate(reponse_array):
-
-        # Match, then print reponse 
-        if word in keywords:
-            print("\n \n" + keywords[word])
-            match = True
-            break 
-    
-    # No Match, no longer iterating, default 
-    if not match:
-        print("Sorry I did not understand what you said")
-
-       
-
-    
-    
+    bot_response = get_response(response, keywords)
+    if bot_response == 'q':
+        print("It was a pleasure talking to you")
+        break
+    else:
+        print(bot_response)

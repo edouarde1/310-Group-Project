@@ -1,6 +1,6 @@
 
 from contextlib import nullcontext
-from naive_bot import load_data
+from naive_bot.naive_bot import load_data
 
 
 class bot:   
@@ -12,8 +12,8 @@ class bot:
             words = str_input.lower().split()
             for word in words:
                 if word in self.dict.keys():
-                    return self.dict[word];
-            return "I'm sorry, I don't understand.";    
+                    return self.dict[word]
+            return "I'm sorry, I don't understand."
 
         def test(self):
             print("Hot Damn, this actually works!")
