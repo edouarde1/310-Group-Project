@@ -8,6 +8,7 @@ class BotGUI(tk.Tk):
         tk.Tk.__init__(self)
         self._frame = None
         self.switch_frame(HomeScreen)
+        self.title("Atlantis Explorer")
 
     # Destroy active window and replace with desired
     def switch_frame(self, frame_class):
@@ -25,6 +26,7 @@ class BotGUI(tk.Tk):
 
 
 # Main title screen shown when loading app
+# TODO: Potentially increase starting size of this window so it's less awkward
 class HomeScreen(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -37,19 +39,41 @@ class HomeScreen(tk.Frame):
 
 # The screen where inputs are entered
 class ChatScreen(tk.Frame):
-    def send_message(self, message):
-        return message
+    # The function which handles user input.
+    def retrieve_user_message(self, inputField):
+        # Retrieve user input and save it
+        userInput = inputField.get("1.0", tk.END)
+        # Clear input box
+        inputField.delete("1.0", tk.END)
+        # TODO: Send & Retrieve input from spellchecker
+        # input = spell_check(input)
+
+        # Placeholder code for debugging and ensuring responses can be set
+        print(userInput)
+        # TODO: Get response from bot & update response label
+        self.response = userInput
+        self.responseLabel["text"] = self.response
+
+    def show_help_popup(self):
+        self.responseLabel["text"] = "Welcome, Adventurer! Please enter your question below.\n When you are done, " \
+                                     "please end your question with a '?' and hit the 'Send' button below!"
 
     def __init__(self, master):
-        self.response = "Welcome, Adventurer! Please enter your questions below."
+        self.response = "Welcome, Adventurer! Please enter your question below.\n When you are done, please end your " \
+                        "question with a '?' and hit the 'Send' button below!"
         tk.Frame.__init__(self, master)
-        tk.Label(self, text=self.response).pack(side="top", fill="x", pady=10)
-        userInput = tk.Text(self)
-        userInput.pack(side="top", fill="x", pady=10)
+        # Response label is what the bot response will be output to
+        self.responseLabel = tk.Label(self, text=self.response)
+        self.responseLabel.pack(side="top", fill="x", pady=10)
+        userInputField = tk.Text(self)
+        userInputField.pack(side="top", fill="x", pady=10)
+        # Bottom row of buttons
         tk.Button(self, text="Send",
-                  command=lambda: master.switch_frame(ChatScreen)).pack()
-        tk.Button(self, text="Back ",
-                  command=lambda: master.switch_frame(HomeScreen)).pack()
+                  command=lambda: self.retrieve_user_message(userInputField)).pack(side="left")
+        tk.Button(self, text="Help",
+                  command=lambda: self.show_help_popup()).pack(side="left")
+        tk.Button(self, text="Back",
+                  command=lambda: master.switch_frame(HomeScreen)).pack(side="left")
 
 
 bot = BotGUI()
