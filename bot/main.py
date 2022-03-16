@@ -8,7 +8,7 @@ import stanza
 ENTITY_DICT_PATH = 'bot/entity_dict.json'
 entity_dict = get_entity_dict(ENTITY_DICT_PATH)
 
-query = "Tell me about greece"
+query = " Tell me about atlantis ?"
 
 
 
@@ -22,14 +22,15 @@ def get_response(query, entity_dict):
     for obj in query_objects:
         
         if obj in entity_dict:
-            print(entity_dict[obj])
             response.append(entity_dict[obj])
         else:
             print("Sorry can't help provide any information that relates to " + obj)
     
     return " ".join(response)
         
-print(get_response(query, entity_dict))
+resp = get_response(query, entity_dict)
+
+print(resp)
 
 
 
