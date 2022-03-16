@@ -1,40 +1,35 @@
-from data_utils.data_load import preproc, pos_tag, dependencyParser
-import re, pprint
+from data_utils.data_load import preproc, pos_tag, dependencyParser, get_query_objects
+from data_utils.entity_dict import create_entity_dict,get_entity_dict
 import nltk
+import json
 import stanza 
-import os 
+
+#TEXT_BODY_PATH = 'bot/text/atlantis.txt'
+ENTITY_DICT_PATH = 'bot/entity_dict.json'
+entity_dict = get_entity_dict(ENTITY_DICT_PATH)
+
+query = "Tell me about greece"
 
 
 
-# POS TAGGING 
-TEXT_BODY_PATH = './text/atlantis.txt'
-
-# Retrieve preprocess sentences
-sentences = preproc(TEXT_BODY_PATH)
-sentences = pos_tag(sentences)
-print(sentences)
+def get_response(query, entity_dict):
+    
+    response = []
+    # Find the objects in the user query 
+    query_objects = get_query_objects(query)
 
 
-
-# Sentence relationships 
-
-
-
-
-
-
-
-
-# Queury Similar words from text body
-text = nltk.Text(str(list(zip(word))[0]).strip('(').strip(')').strip('\',').lower() for sent in sentences for word in sent)
-
-text.similar('captial')
+    for obj in query_objects:
+        
+        if obj in entity_dict:
+            print(entity_dict[obj])
+            response.append(entity_dict[obj])
+        else:
+            print("Sorry can't help provide any information that relates to " + obj)
+    
+    return " ".join(response)
+        
+print(get_response(query, entity_dict))
 
 
-def process_query(string): 
-    # Retu
-    dp_query = dependencyParser("Will I need a ship to go to atlantis?")
-    for sent in dp_query.sentences:
-        for word in sent.words:
-            if word.deprel == "obj" or word.deprel == "":
-                print(word.text)
+
