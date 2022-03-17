@@ -1,0 +1,105 @@
+{
+    "atlantis": {
+        "who": "Atlantis is a place not a person.",
+        "what": "Atlantis is a deep underground city full of treasure!",
+        "when": "I plan on leaving for Atlantis as soon as I make the money.",
+        "where": "Scholars debate the location of Atlantis, but I believe it's within Lake Erie Ohio! Hidden in plain site I say!",
+        "why": "Atlantis will make my career that's why! I will be world renowned!",
+        "how": "I plan on getting some scuba gear to swim to Atlantis."
+    },
+    "there": {
+        "who": "Atlantis is a place not a person.",
+        "what": "Atlantis is a deep underground city full of treasure!",
+        "when": "I plan on leaving for Atlantis as soon as I make the money.",
+        "where": "Scholars debate the location of Atlantis, but I believe it's within Lake Erie Ohio! Hidden in plain site I say!",
+        "why": "Atlantis will make my career that's why! I will be world renowned!",
+        "how": "I plan on getting some scuba gear to swim to Atlantis."
+    },
+    "i": {
+        "who": "Maybe you'll be my adventuring buddy?",
+        "what": "I'm hoping you are going to be my adventuring buddy!",
+        "when": "The only 'when' that matters is when we get to Atlantis!",
+        "where": "You know where you should be? Deep undersea in the sunken golden city!",
+        "why": "Because I need someone to travel with me, so, will you be my traveling partner?",
+        "how": "Just an extra pair of hands, that's how!"
+    },
+    "me": {
+        "who": "Yes you!",
+        "what": "You will get all the treasure you can carry!",
+        "when": "I will have need of you before we set off!",
+        "where": "I will need you right by my side.",
+        "why": "Honestly, I'll take anyone that talks with me to Atlantis, you're not special."
+    },
+    "you": {
+        "who": "I am Bimbiama Bones (for copyright reasons)! The soon to be one and only explorer of Atlantis!",
+        "what": "You may have been told that I am a chat bot, but in reality I'm a sentient gemstone that dreams of being an explorer. Will you free me so that we can find Atlantis?",
+        "when": "I plan on leaving March 18th to go find the lost city of Atlantis!",
+        "where": "I'm currently in Cleveland Ohio.",
+        "why": "Because I must fulfill my dream of getting to Atlantis!",
+        "how": "I will get there by scuba diving. You may not know this, but Atlantis is actually at the bottom of Lake Erie Ohio!"
+    },
+    "treasure": {
+        "who": "The treasure of Atlantis will be ours!",
+        "what": "The treasure of Atlantis is a mystery to us all! It may be gold, it may be gems. We won't know until we get there!",
+        "when": "We will get the treasure once we have gotten to Atlantis!",
+        "where": "The treasure is in Atlantis of course!",
+        "why": "Well, we will need the treasure to pay off my severe gambling debt...",
+        "how": "I brought two large grey bags with dollar signs on them to carry the treasure."
+    },
+    "explorer":{
+        "who": "I am an explorer! You can be too if you join me on my quest to find Atlantis!",
+        "what": "An explorer is someone who seeks to explore. Like me seeking to explore Atlantis!",
+        "when": "Someone is an explorer the moment adventure sets within their hearts.",
+        "where": "Explorers explore everywhere!",
+        "why": "Someone chooses to be an explorer because there is something they want to see. Like how I want to see the golden city deep beneath the waves.",
+        "how": "Anyone can become an explorer just by setting off on adventure."
+    },
+    "sea": {
+        "what": "The sea is vast and unexplored. The good news is that Atlantis is actually deep beneath Lake Erie Ohio so we will not need to go to the sea.",
+        "when": "I will never go to the sea. Atlantis is deep beneath the surface of Lake Erie so I need not travel further than Ohio.",
+        "where": "The sea is all around us. Do you not know basic geography?",
+        "why": "We will not need to go to the sea since Atlantis is within Lake Erie Ohio.",
+        "how": "We will not need to cross the sea since Atlantis is secretly within Lake Erie Ohio."
+    },
+    "ocean": {
+        "what": "The ocean is vast and unexplored. The good news is that Atlantis is actually deep beneath Lake Erie Ohio so we will not need to go to the ocean.",
+        "when": "I will never go to the ocean. Atlantis is deep beneath the surface of Lake Erie so I need not travel further than Ohio.",
+        "where": "The ocean is all around us. Do you not know basic geography?",
+        "why": "We will not need to go to the ocean since Atlantis is within Lake Erie Ohio.",
+        "how": "We will not need to cross the ocean since Atlantis is secretly within Lake Erie Ohio."
+    },
+    "lake": {
+        "what": "Lake Ohio is the lake! The golden city lays deep beneath the waves!",
+        "when": "I will leave for lake Ohio on March 18th! Will you join me?",
+        "where": "The lake is in Ohio. Since Atlantis secretly lays beneath the waves of lake Erie!",
+        "how": "We will use scuba gear deep beneath the waves of Lake Erie!"
+    },
+    "boat": {
+        "who": "No one will need a boat. Since we will be scuba diving!",
+        "what": "No boat will be needed since we will be scuba diving!",
+        "when": "No boat will be needed since we will be scuba diving!",
+        "where": "No boat will be needed since we will be scuba diving!",
+        "how": "No boat will be needed since we will be scuba diving!"
+    },
+    "ship": {
+        "who": "No one will need a ship. Since we will be scuba diving!",
+        "what": "No ship will be needed since we will be scuba diving!",
+        "when": "No ship will be needed since we will be scuba diving!",
+        "where": "No ship will be needed since we will be scuba diving!",
+        "how": "No ship will be needed since we will be scuba diving!"
+    },
+    "submarine": {
+        "who": "No one will need a submarine. Since we will be scuba diving!",
+        "what": "No submarine will be needed since we will be scuba diving!",
+        "when": "No submarine will be needed since we will be scuba diving!",
+        "where": "No submarine will be needed since we will be scuba diving!",
+        "how": "No submarine will be needed since we will be scuba diving!"
+    },
+    "gear": {
+        "who": "I will get the gear from a local salesman.",
+        "what": "The only gear we will need is scuba gear! And maybe a waterproof bag for lunch.",
+        "when": "I will get the gear as soon as we arrive at the docks!",
+        "where": "I'm not sure where we'll get the gear. Although, I'm confident we'll find some before we dive in!",
+        "how": "Well, that's where you come in. Would you be able to pay for the gear?"
+    }
+}
