@@ -31,18 +31,43 @@ This directory includes all the files for the bot.
 This is the main file where our program is executed. 
 
 #### get_response(response, keywords)
-This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and propper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
+This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and proper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
 
-  Parameter:
+  Parameters:
   - response: a string input by the user acting as the key for keywords
   - entity_dict: a .json file generated from entity_dict.py
   
   Returns:
   - output: a string containing the bots response
 
+### data_load.py
 
-### main.py 
-Main task: This file runs the chat bot. 
+#### data_load(filepath):
+Loads text from a file.
+
+ Parameters:
+ - filepath: file to path to retrieve text from 
+
+ Returns:
+  - contents: string of raw text
+
+#### preproc(filepath)
+Extracts the nouns and proper pouns from the user query. Takes a user query and runs string 
+through Stanza's Dependency Parser. More information about this library is found here: 
+(https://stanfordnlp.github.io/stanza/depparse.html)[https://stanfordnlp.github.io/stanza/depparse.html]
+
+Parameters:
+ - query: a string 
+
+ Returns:
+- obj_list: a list nouns and proper nouns from the user query 
+
+#### dependencyParser(sentence)
+Helper utility used to extract the depencies from a sentence. Runs the dp pipeline object 
+in order to run depparse, lemma, and pos tagginig.
+
+Parameters: 
+ - sentence: a string 
 
 
 
