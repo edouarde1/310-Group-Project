@@ -1,6 +1,7 @@
 import sys
 import tkinter as tk
-import bot.bot as bot
+import bot
+
 
 # Class for the Bot GUI
 class BotGUI(tk.Tk):
@@ -45,12 +46,13 @@ class ChatScreen(tk.Frame):
         userInput = inputField.get("1.0", tk.END)
         # Clear input box
         inputField.delete("1.0", tk.END)
-        # Placeholder code for debugging and ensuring responses can be set
-        print(userInput)
-        input = bot.spell_check(userInput)
 
-        # TODO: Get response from bot & update response label
-        self.response = userInput
+        # Pass input through spell checking module
+        input = bot.spell_check(userInput)
+        print(input)
+        # Get response from bot & update response label
+        self.response = bot.get_response(input)
+        print("Response", self.response)
         self.responseLabel["text"] = self.response
 
     def show_help_popup(self):
@@ -75,5 +77,5 @@ class ChatScreen(tk.Frame):
                   command=lambda: master.switch_frame(HomeScreen)).pack(side="left")
 
 
-bot = BotGUI()
-bot.mainloop()
+botInterface = BotGUI()
+botInterface.mainloop()
