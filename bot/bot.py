@@ -6,8 +6,8 @@ import nltk
 import json
 import stanza
 
-TEXT_BODY_PATH = 'bot/text/atlantis.txt'
-ENTITY_DICT_PATH = './bot/entity_dict.json'
+TEXT_BODY_PATH = './text/atlantis.txt'
+ENTITY_DICT_PATH = './entity_dict.json'
 
 responses = ["I'm sorry, I don't understand.",
              "I am unsure what you are asking me.",
@@ -15,6 +15,7 @@ responses = ["I'm sorry, I don't understand.",
              "Ask me about Atlantis or Treasure.",
              "Your words make no sense to me.",
              "I know nothing about that topic."]
+
 
 def spell_check(input):
     """
@@ -32,7 +33,7 @@ def spell_check(input):
     for word in err:
         word = spell.correction(word)
         correct.append(spell.correction(word))
-    return correct
+    return " ".join(correct)
 
 
 def get_response(query):
