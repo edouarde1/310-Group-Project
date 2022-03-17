@@ -1,6 +1,6 @@
 import sys
 import tkinter as tk
-
+import bot.bot as bot
 
 # Class for the Bot GUI
 class BotGUI(tk.Tk):
@@ -45,11 +45,10 @@ class ChatScreen(tk.Frame):
         userInput = inputField.get("1.0", tk.END)
         # Clear input box
         inputField.delete("1.0", tk.END)
-        # TODO: Send & Retrieve input from spellchecker
-        # input = spell_check(input)
-
         # Placeholder code for debugging and ensuring responses can be set
         print(userInput)
+        input = bot.spell_check(userInput)
+
         # TODO: Get response from bot & update response label
         self.response = userInput
         self.responseLabel["text"] = self.response
