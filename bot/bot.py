@@ -8,13 +8,13 @@ import stanza
 
 TEXT_BODY_PATH = 'bot/text/atlantis.txt'
 ENTITY_DICT_PATH = './bot/entity_dict.json'
+
 responses = ["I'm sorry, I don't understand.",
              "I am unsure what you are asking me.",
              "Sorry, I only want to talk about Atlantis and Treasure",
              "Ask me about Atlantis or Treasure.",
              "Your words make no sense to me.",
              "I know nothing about that topic."]
-
 
 def spell_check(input):
     # takes a string and returns a list substring of corrected words
