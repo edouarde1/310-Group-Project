@@ -5,7 +5,7 @@ import json
 import stanza 
 
 TEXT_BODY_PATH = 'bot/text/atlantis.txt'
-ENTITY_DICT_PATH = '/Users/edouard/Desktop/310-Group-Project/bot/entity_dict.json'
+ENTITY_DICT_PATH = './bot/entity_dict.json'
 entity_dict = get_entity_dict(ENTITY_DICT_PATH)
 
 query = "Tell me about atlantis ?"
