@@ -12,4 +12,8 @@ def get_nouns():
     for noun in data:
         nounList.append(noun)
     return nounList
-print(get_nouns())
+def get_questions(noun):
+    questList = []
+    for question in data[noun]:
+        questList.append(question)
+    return questList
