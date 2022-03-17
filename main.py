@@ -1,7 +1,6 @@
 from naive_bot.naive_bot import load_data, get_response
 import bot
 
-
 # Get Bot Dictionary
 keywords = load_data("keywords.csv")
 

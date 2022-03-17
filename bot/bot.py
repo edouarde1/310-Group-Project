@@ -4,21 +4,19 @@ import nltk
 import json
 import stanza 
 
-#TEXT_BODY_PATH = 'bot/text/atlantis.txt'
-ENTITY_DICT_PATH = 'bot/entity_dict.json'
+TEXT_BODY_PATH = 'bot/text/atlantis.txt'
+ENTITY_DICT_PATH = '/Users/edouard/Desktop/310-Group-Project/bot/entity_dict.json'
 entity_dict = get_entity_dict(ENTITY_DICT_PATH)
 
-query = " Tell me about atlantis ?"
-
+query = "Tell me about atlantis ?"
 
 
 def get_response(query, entity_dict):
     
     response = []
-    # Find the objects in the user query 
+    #Find the objects in the user query 
     query_objects = get_query_objects(query)
-
-
+    
     for obj in query_objects:
         
         if obj in entity_dict:
@@ -31,6 +29,7 @@ def get_response(query, entity_dict):
 resp = get_response(query, entity_dict)
 
 print(resp)
+#print(dependencyParser("Where is atlantis and how to I find it ? "))
 
 
 
