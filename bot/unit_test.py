@@ -5,14 +5,15 @@ import bot
 class TestClass(unittest.TestCase):
     def test_spell_check(self):
         #TODO: Add 2 more test cases
-        #self.assertEqual(bot.spell_check("tdll md wdy"), ["tell me why"])
+        self.assertEqual(bot.spell_check("tdll md wdy"), ["tell me why"])
         #self.assertEqual(bot.spell_check("ain't nothin but a heartche"),["ain't nothing but a heartache"])
         #self.assertEqual(bot.spell_check("I nevr wanna hear yu say "),["I never wanna hear you say"])
         #print(bot.spell_check("tdll md wdy ain't nothin but a heartche I nevr wanna hear yu say "))
         #I want it that way! 
         print("test")
-        return True
+        return False
 
+    
     def test_get_response(self):
         # TODO: Use bot get_response to test 3 inputs
         print("test")
@@ -29,5 +30,6 @@ class TestClass(unittest.TestCase):
         # TODO: Test synonyms for 3 commonly used words
         return False
 
+#edit main to be bot, update to unittest.bot() 
 if __name__ == '__main__':
     unittest.main()
