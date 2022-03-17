@@ -81,11 +81,11 @@ RETURNS:
             if word in nouns:
                 # Find adverb connected to noun
                 if head in search_json.get_questions(word):
-                    print("noun", word, "desc", head)
+                    #print("noun", word, "desc", head)
                     obj_list = [word, head]
             elif head in nouns:
                 if word in search_json.get_questions(head):
-                    print("noun", head, "desc", word)
+                    #print("noun", head, "desc", word)
                     obj_list = [head, word]
 
     # Filter out only objects (NOUNs) from the user query
@@ -111,9 +111,9 @@ PARAMETERS:
 
     doc = NLP(sentence)
 
-    print(*[
-        f'id: {word.id}\tword: {word.text}\thead id: {word.head}\thead: {sent.words[word.head - 1].text if word.head > 0 else "root"}\tdeprel: {word.deprel}'
-        for sent in doc.sentences for word in sent.words], sep='\n')
+    #print(*[
+    #    f'id: {word.id}\tword: {word.text}\thead id: {word.head}\thead: {sent.words[word.head - 1].text if word.head > 0 else "root"}\tdeprel: {word.deprel}'
+    #    for sent in doc.sentences for word in sent.words], sep='\n')
 
     # print(sent)
     return doc

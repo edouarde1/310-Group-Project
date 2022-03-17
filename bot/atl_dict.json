@@ -49,7 +49,8 @@
         "why": "Well, we will need the treasure to pay off my severe gambling debt...",
         "how": "I brought two large grey bags with dollar signs on them to carry the treasure.",
         "find": "The city should be covered in treasure ranging from gold to gems! We won't know until we get there.",
-        "get": "We will put the treasure into these two brown bags with big dollar signs on the side that I have brought."
+        "get": "We will put the treasure into these two brown bags with big dollar signs on the side that I have brought.",
+        "keep": "I will keep the treasure of course!"
     },
     "explorer":{
         "who": "I am an explorer! You can be too if you join me on my quest to find Atlantis!",
@@ -86,7 +87,8 @@
         "where": "No boat will be needed since we will be scuba diving!",
         "how": "No boat will be needed since we will be scuba diving!",
         "find": "No boat will be needed since we will be scuba diving!",
-        "get": "No boat will be needed since we will be scuba diving!"
+        "get": "No boat will be needed since we will be scuba diving!",
+        "need": "No boat will be needed since we will be scuba diving!"
     },
     "ship": {
         "who": "No one will need a ship. Since we will be scuba diving!",
@@ -95,7 +97,8 @@
         "where": "No ship will be needed since we will be scuba diving!",
         "how": "No ship will be needed since we will be scuba diving!",
         "find": "No ship will be needed since we will be scuba diving!",
-        "get": "No ship will be needed since we will be scuba diving!"
+        "get": "No ship will be needed since we will be scuba diving!",
+        "need": "No ship will be needed since we will be scuba diving!"
     },
     "submarine": {
         "who": "No one will need a submarine. Since we will be scuba diving!",
@@ -104,7 +107,8 @@
         "where": "No submarine will be needed since we will be scuba diving!",
         "how": "No submarine will be needed since we will be scuba diving!",
         "find": "No submarine will be needed since we will be scuba diving!",
-        "get": "No submarine will be needed since we will be scuba diving!"
+        "get": "No submarine will be needed since we will be scuba diving!",
+        "need": "No submarine will be needed since we will be scuba diving!"
     },
     "gear": {
         "who": "I will get the gear from a local salesman.",
