@@ -33,12 +33,22 @@ This is the main file where our program is executed.
 #### get_response(response, keywords)
 This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and proper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
 
-  Parameters:
-  - response: a string input by the user acting as the key for keywords
-  - entity_dict: a .json file generated from entity_dict.py
+Parameters:
+- response: a string input by the user acting as the key for keywords
+- entity_dict: a .json file generated from entity_dict.py
   
-  Returns:
-  - output: a string containing the bots response
+Returns:
+- output: a string containing the bots response
+
+#### spell_check(input)
+Takes a string and returns a string with closest related permutation that is part of the english language.
+
+ Parameter:
+ - input: a string input  
+
+ Returns:
+ - correct: a corrected string output 
+    
 
 ### data_load.py
 
@@ -50,6 +60,7 @@ Loads text from a file.
 
  Returns:
   - contents: string of raw text
+  
 
 #### preproc(filepath)
 Extracts the nouns and proper pouns from the user query. Takes a user query and runs string 
@@ -62,6 +73,7 @@ Parameters:
  Returns:
 - obj_list: a list nouns and proper nouns from the user query 
 
+
 #### dependencyParser(sentence)
 Helper utility used to extract the depencies from a sentence. Runs the dp pipeline object 
 in order to run depparse, lemma, and pos tagginig.
@@ -70,5 +82,16 @@ Parameters:
  - sentence: a string 
 
 
+### unitTest.py  TODO: UPDATE THIS LATER WHEN WE ACTUALLY FIX IT 
 
+#### test_spell_check
+Tests functionality of `spell_check()` function in bot.py
+
+
+#### test_get_response()
+Tests functionality of `get_response(query)` function in bot.py
+
+
+#### test_load_data()
+Tests functionality of `load_data()` 
 
