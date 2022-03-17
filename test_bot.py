@@ -1,4 +1,9 @@
-def test_spell_check():
+import unittest
+
+
+from bot_module import spell_check
+
+def spell_check():
     #TODO: Add 2 more test cases
     assert 1 == 1
     #self.assertEqual(bot.spell_check("ain't nothin but a heartche"),["ain't nothing but a heartache"])
@@ -9,7 +14,7 @@ def test_spell_check():
     return False
 
     
-def test_get_response():
+def get_response():
     # TODO: Use bot get_response to test 3 inputs
     print("test")
     return False

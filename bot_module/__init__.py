@@ -1,3 +1,7 @@
+import sys
+
+sys.path.append("..")
+
 from data_utils.data_load import preproc, pos_tag, dependencyParser, get_query_objects
 from data_utils.entity_dict import create_entity_dict, get_entity_dict
 from spellchecker import SpellChecker
@@ -6,7 +10,7 @@ import nltk
 import json
 import stanza
 
-TEXT_BODY_PATH = './text/atlantis.txt'
+TEXT_BODY_PATH = 'entity_dict.json'
 ENTITY_DICT_PATH = './entity_dict.json'
 
 responses = ["I'm sorry, I don't understand.",
