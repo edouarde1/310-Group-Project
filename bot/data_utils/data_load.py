@@ -77,7 +77,9 @@ RETURNS:
         for word in sent.words:
             head = sent.words[word.head - 1].text.lower()
             word = word.text.lower()
+            # finds if a key noun is in one of the phrases
             if word in nouns:
+                # Find adverb connected to noun
                 if head in search_json.get_questions(word):
                     print("noun", word, "desc", head)
                     obj_list = [word, head]
@@ -109,9 +111,9 @@ PARAMETERS:
 
     doc = NLP(sentence)
 
-    # print(*[
-    #     f'id: {word.id}\tword: {word.text}\thead id: {word.head}\thead: {sent.words[word.head - 1].text if word.head > 0 else "root"}\tdeprel: {word.deprel}'
-    #     for sent in doc.sentences for word in sent.words], sep='\n')
+    print(*[
+        f'id: {word.id}\tword: {word.text}\thead id: {word.head}\thead: {sent.words[word.head - 1].text if word.head > 0 else "root"}\tdeprel: {word.deprel}'
+        for sent in doc.sentences for word in sent.words], sep='\n')
 
     # print(sent)
     return doc
