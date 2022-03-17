@@ -5,7 +5,9 @@
         "when": "I plan on leaving for Atlantis as soon as I make the money.",
         "where": "Scholars debate the location of Atlantis, but I believe it's within Lake Erie Ohio! Hidden in plain site I say!",
         "why": "Atlantis will make my career that's why! I will be world renowned!",
-        "how": "I plan on getting some scuba gear to swim to Atlantis."
+        "how": "I plan on getting some scuba gear to swim to Atlantis.",
+        "find": "We will find Atlantis at the bottom of Lake Erie Ohio!",
+        "get": "We will bus to the docks, then we will scuba dive!"
     },
     "there": {
         "who": "Atlantis is a place not a person.",
@@ -13,7 +15,8 @@
         "when": "I plan on leaving for Atlantis as soon as I make the money.",
         "where": "Scholars debate the location of Atlantis, but I believe it's within Lake Erie Ohio! Hidden in plain site I say!",
         "why": "Atlantis will make my career that's why! I will be world renowned!",
-        "how": "I plan on getting some scuba gear to swim to Atlantis."
+        "how": "I plan on getting some scuba gear to swim to Atlantis.",
+        "get": "We will bus to the docks, then we will scuba dive!"
     },
     "i": {
         "who": "Maybe you'll be my adventuring buddy?",
@@ -44,7 +47,9 @@
         "when": "We will get the treasure once we have gotten to Atlantis!",
         "where": "The treasure is in Atlantis of course!",
         "why": "Well, we will need the treasure to pay off my severe gambling debt...",
-        "how": "I brought two large grey bags with dollar signs on them to carry the treasure."
+        "how": "I brought two large grey bags with dollar signs on them to carry the treasure.",
+        "find": "The city should be covered in treasure ranging from gold to gems! We won't know until we get there.",
+        "get": "We will put the treasure into these two brown bags with big dollar signs on the side that I have brought."
     },
     "explorer":{
         "who": "I am an explorer! You can be too if you join me on my quest to find Atlantis!",
@@ -79,27 +84,35 @@
         "what": "No boat will be needed since we will be scuba diving!",
         "when": "No boat will be needed since we will be scuba diving!",
         "where": "No boat will be needed since we will be scuba diving!",
-        "how": "No boat will be needed since we will be scuba diving!"
+        "how": "No boat will be needed since we will be scuba diving!",
+        "find": "No boat will be needed since we will be scuba diving!",
+        "get": "No boat will be needed since we will be scuba diving!"
     },
     "ship": {
         "who": "No one will need a ship. Since we will be scuba diving!",
         "what": "No ship will be needed since we will be scuba diving!",
         "when": "No ship will be needed since we will be scuba diving!",
         "where": "No ship will be needed since we will be scuba diving!",
-        "how": "No ship will be needed since we will be scuba diving!"
+        "how": "No ship will be needed since we will be scuba diving!",
+        "find": "No ship will be needed since we will be scuba diving!",
+        "get": "No ship will be needed since we will be scuba diving!"
     },
     "submarine": {
         "who": "No one will need a submarine. Since we will be scuba diving!",
         "what": "No submarine will be needed since we will be scuba diving!",
         "when": "No submarine will be needed since we will be scuba diving!",
         "where": "No submarine will be needed since we will be scuba diving!",
-        "how": "No submarine will be needed since we will be scuba diving!"
+        "how": "No submarine will be needed since we will be scuba diving!",
+        "find": "No submarine will be needed since we will be scuba diving!",
+        "get": "No submarine will be needed since we will be scuba diving!"
     },
     "gear": {
         "who": "I will get the gear from a local salesman.",
         "what": "The only gear we will need is scuba gear! And maybe a waterproof bag for lunch.",
         "when": "I will get the gear as soon as we arrive at the docks!",
         "where": "I'm not sure where we'll get the gear. Although, I'm confident we'll find some before we dive in!",
-        "how": "Well, that's where you come in. Would you be able to pay for the gear?"
+        "how": "Well, that's where you come in. Would you be able to pay for the gear?",
+        "find": "I'm sure someone at the docks will be selling the stuff we need!",
+        "get": "We simply need some scuba gear. I'm a little short on cash though. That's where I look to you, would you be willing to fund this expedition?"
     }
 }
