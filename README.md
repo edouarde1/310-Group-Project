@@ -8,45 +8,97 @@ Our project is going to be an interactive chatbot that takes on the role of a wo
 
 1. Download our GitHub repo 
 2. Open the repo using VSCode or Terminal 
-3. Run main.py 
+3. run `pip install nltk` and `pip install pyspellchecker` in terminal `pip install stanza`
+4. Run main.py 
 
+## Dependencies
+This bot requires nltk, pyspechecker, and stanza in order to run properly. You may have to use bot directory and execute the following code inside a test.py script that you create yourself. 
+    
+    import stanza
+    import nltk
+    stanza.download('en')
+    nltk.download()
+    
+once you have done this, everything should work. 
 
 ## Dataset 
 
-#### keywords.csv 
-The dataset was created by our group. There are a column of keywords and a column of responses. Each keyword corresponds to exactly one response. 
+#### corpus.txt
+This txt file is pulled from the [Wikipedia page for Atlantis](https://en.wikipedia.org/wiki/Atlantis). This txt file was used as the corpus for our chat bot.
+All these words are tokenized with NLTK and then implemented to a dictionary as keys as a JSON file. 
+
 
 ## Classes and Functions 
 
-### Naive Bot 
-This directory includes all the files for the naive bot. All other directories can be ignored as they will be used for future developments on the chat bot 
+### Bot 
+This directory includes all the files for the bot. 
 
-#### naive_bot.py___ 
-Main Task: This file includes all the naive bot functionality. 
 
-**load_data(filename)**
-This function creates a dictionary structure for the chat bot by iterating through a csv file. The keys are words, and the values are responses. For example, the key "Hey" has a value of "Hail and well met strange traveler!". This key-value correlation is how the chat bot responds to user inputs.
+### main.py
+This is the main file where our program is executed. 
 
-  Parameter:
-  - filename: Path to a csv file that holds key value pairs 
+#### get_response(response, keywords)
+This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and proper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
 
-  Returns: 
-  - bot_dict: Keyword dictionary for the key-value pairs
-
-**get_response(response, keywords)**
-This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. The user input is converted into a list a of words using a space delimiter. In a for-loop, the loop iterates through each word in the list and detects if the word exists in the keyword dictionary. If there is a match, that means there is a chat bot response for the keyword. This response is found using the key-value dictionary pair and is displayed in the terminal window. If there is no keyword detected in the user response, then the bot returns "Sorry I did not understand what you said". The user can quit the chat bot by pressing 'q'. This terminates the while loop and kills the program.
-
-  Parameter:
-  - response: a string input by the user acting as the key for keywords
-  - keywords: keyword dictionary of key-value pairs used for generating a response from the bot
+Parameters:
+- response: a string input by the user acting as the key for keywords
+- entity_dict: a .json file generated from entity_dict.py
   
-  Returns:
-  - output: a string containing the bots response
+Returns:
+- output: a string containing the bots response
+
+#### spell_check(input)
+Takes a string and returns a string with closest related permutation that is part of the english language.
+
+ Parameter:
+ - input: a string input  
+
+ Returns:
+ - correct: a corrected string output 
+    
+
+### data_load.py
+
+#### data_load(filepath):
+Loads text from a file.
+
+ Parameters:
+ - filepath: file to path to retrieve text from 
+
+ Returns:
+  - contents: string of raw text
+  
+
+#### preproc(filepath)
+Extracts the nouns and proper pouns from the user query. Takes a user query and runs string 
+through Stanza's Dependency Parser. More information about this library is found here: 
+(https://stanfordnlp.github.io/stanza/depparse.html)[https://stanfordnlp.github.io/stanza/depparse.html]
+
+Parameters:
+ - query: a string 
+
+ Returns:
+- obj_list: a list nouns and proper nouns from the user query 
 
 
-### main.py 
-Main task: This file runs the chat bot. 
+#### dependencyParser(sentence)
+Helper utility used to extract the depencies from a sentence. Runs the dp pipeline object 
+in order to run depparse, lemma, and pos tagginig.
+
+Parameters: 
+ - sentence: a string 
 
 
+### unitTest.py  TODO: UPDATE THIS LATER WHEN WE ACTUALLY FIX IT 
 
+#### test_spell_check
+Tests functionality of `spell_check()` function in bot.py
+
+
+#### test_get_response()
+Tests functionality of `get_response(query)` function in bot.py
+
+
+#### test_load_data()
+Tests functionality of `load_data()` 
 
