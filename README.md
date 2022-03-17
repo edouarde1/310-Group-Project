@@ -12,7 +12,14 @@ Our project is going to be an interactive chatbot that takes on the role of a wo
 4. Run main.py 
 
 ## Dependencies
-This bot requires nltk, pyspechecker, and stanza in order to run properly. 
+This bot requires nltk, pyspechecker, and stanza in order to run properly. You may have to use bot directory and execute the following code inside a test.py script that you create yourself. 
+    
+    import stanza
+    import nltk
+    stanza.download('en')
+    nltk.download()
+    
+once you have done this, everything should work. 
 
 ## Dataset 
 
