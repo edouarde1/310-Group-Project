@@ -31,11 +31,11 @@ This directory includes all the files for the bot.
 This is the main file where our program is executed. 
 
 #### get_response(response, keywords)
-This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and propper nouns—all while running them through Stanza's dependancy parser. In a for-loop, the loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. This response is found using the key-value dictionary pair and is displayed in the GUI. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
+This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and propper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
 
   Parameter:
   - response: a string input by the user acting as the key for keywords
-  - entity_dict:a .json file generated from entity_dict.py
+  - entity_dict: a .json file generated from entity_dict.py
   
   Returns:
   - output: a string containing the bots response
