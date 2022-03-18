@@ -46,7 +46,10 @@ class ChatScreen(tk.Frame):
         userInput = inputField.get("1.0", tk.END)
         # Clear input box
         inputField.delete("1.0", tk.END)
-
+        # Remove unnecessary punctuation
+        punctuation = '!()-[]{};:\,<>./?@#$%^&*_~'
+        for char in punctuation:
+            userInput = userInput.replace(char,' ')
         # Pass input through spell checking module
         input = bot.spell_check(userInput)
         print(input)

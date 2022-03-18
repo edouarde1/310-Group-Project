@@ -1,14 +1,12 @@
-from data_utils.data_load import preproc, pos_tag, dependencyParser, get_query_objects
-from data_utils.entity_dict import create_entity_dict, get_entity_dict
+import search_json
+import syn_detection
+from data_utils.data_load import get_query_objects
 from spellchecker import SpellChecker
 import random
-import nltk
-import json
-import stanza
 
 TEXT_BODY_PATH = './text/atlantis.txt'
-ENTITY_DICT_PATH = './entity_dict.json'
-
+ENTITY_DICT_PATH = 'data_utils/entity_dict.json'
+greetings = syn_detection.detect_syn("hello")
 responses = ["I'm sorry, I don't understand.",
              "I am unsure what you are asking me.",
              "Sorry, I only want to talk about Atlantis and Treasure",
@@ -56,14 +54,21 @@ def get_response(query):
 
     response = []
     # Find the objects in the user query
+    for greeting in greetings:
+        if greeting in query.lower().split():
+            return "Hi! Great to meet you. Are you going to ask me some questions?"
     query_objects = get_query_objects(query)
+    if query_objects is None:
+        return responses[random.randint(0, len(responses) - 1)]
 
-    for obj in query_objects:
-
-        if obj in entity_dict:
-            response.append(entity_dict[obj])
-        else:
-            # Satisfies 5 possible responses for out of topic questions
-            return responses[random.randint(0, len(responses))]
+    else:
+        response = search_json.search_noun_quest(query_objects[0], query_objects[1])
+    # for obj in query_objects:
+    #
+    #     if obj in entity_dict:
+    #         response.append(entity_dict[obj])
+    #     else:
+    #         # Satisfies 5 possible responses for out of topic questions
+    #         return responses[random.randint(0, len(responses))]
 
     return " ".join(response)

@@ -1,5 +1,5 @@
-from data_utils.data_load import preproc
-from data_utils.data_load import get_query_objects
+from bot.data_utils.data_load import preproc
+from bot.data_utils.data_load import get_query_objects
 import json
 
 """

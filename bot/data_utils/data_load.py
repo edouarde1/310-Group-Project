@@ -1,10 +1,10 @@
 import nltk
-from nltk.tokenize import word_tokenize
-from nltk.tag import pos_tag
+from bot import search_json
 import stanza
 
 # Pipeline object to access token, mwt, lemma, and depparse functions from Stanza
 NLP = stanza.Pipeline(lang='en', processors='tokenize,mwt,pos,lemma,depparse', verbose=False)
+nouns = search_json.get_nouns()
 
 
 def data_load(filepath):
@@ -72,13 +72,28 @@ RETURNS:
     """
     # Find out sentence dependencies
     dp_query = dependencyParser(query)
-
-    # Filter out only obects (NOUNs) from the user query 
-    obj_list = []
+    obj_list = None
     for sent in dp_query.sentences:
         for word in sent.words:
-            if word.upos == "NOUN" or word.upos == "PROPN":
-                obj_list.append(word.text)
+            head = sent.words[word.head - 1].text.lower()
+            word = word.text.lower()
+            # finds if a key noun is in one of the phrases
+            if word in nouns:
+                # Find adverb connected to noun
+                if head in search_json.get_questions(word):
+                    #print("noun", word, "desc", head)
+                    obj_list = [word, head]
+            elif head in nouns:
+                if word in search_json.get_questions(head):
+                    #print("noun", head, "desc", word)
+                    obj_list = [head, word]
+
+    # Filter out only objects (NOUNs) from the user query
+    # obj_list = []
+    # for sent in dp_query.sentences:
+    #     for word in sent.words:
+    #         if word.upos == "NOUN" or word.upos == "PROPN":
+    #             obj_list.append(word.text)
 
     return obj_list
 
@@ -93,5 +108,12 @@ PARAMETERS:
     sentence: a string 
 
     """
-    # Return depencies 
-    return NLP(sentence)
+
+    doc = NLP(sentence)
+
+    #print(*[
+    #    f'id: {word.id}\tword: {word.text}\thead id: {word.head}\thead: {sent.words[word.head - 1].text if word.head > 0 else "root"}\tdeprel: {word.deprel}'
+    #    for sent in doc.sentences for word in sent.words], sep='\n')
+
+    # print(sent)
+    return doc
