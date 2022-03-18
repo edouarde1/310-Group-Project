@@ -15,10 +15,12 @@ def data_load(filepath):
     #
     # RETURNS:
     #     contents: string of raw text
-
-    with open(filepath, 'r', errors='ignore') as file:
-        contents = file.read()
-    return contents
+    try:
+        with open(filepath, 'r', errors='ignore') as file:
+            contents = file.read()
+        return contents
+    except OSError as e:
+        return("Sorry! I cant come up with the words right now")
 
 
 def preproc(filepath):

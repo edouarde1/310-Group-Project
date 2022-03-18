@@ -10,7 +10,7 @@ class TestClass(unittest.TestCase):
         self.assertEqual(boty.spell_check("tdll md wdy"),"tell my why")
     
     def test_get_response(self):
-        self.assertEqual(boty.get_response("1"),"I am unsure what you are asking me.")
+        self.assertIsNotNone(boty.get_response("1"),"I am unsure what you are asking me.")
     
     def test_load_data(self):
         self.assertEqual(dl.data_load("file_does_not_exist.csv"),"Sorry! I cant come up with the words right now")

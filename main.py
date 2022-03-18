@@ -13,7 +13,7 @@ while True:
 # Bot Program 
 while True:
     response = input("\n \n")
-    bot_response = get_response(response, keywords)
+    bot_response = boty.get_response(response, keywords)
     if bot_response == 'q':
         print("It was a pleasure talking to you")
         break
