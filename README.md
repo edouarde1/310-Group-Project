@@ -102,3 +102,16 @@ Tests functionality of `get_response(query)` function in bot.py
 #### test_load_data()
 Tests functionality of `load_data()` 
 
+## New Features
+
+### Spell Checking
+
+Spell checking was used in order to improve the overall robustness of our chatbot. Incorrectly spelt words are recognized by our system, and replaced with what is assumed to be the most likley word that the user intended to input. This allows our bot to handle a wide variety of cases that it previously was unable to.
+
+### Synonym Detection
+
+Synonym detection was used in our chatbot in order to improve the greeting function. Rather than hardcode a large if statement containing some number of standard greetings, we used synonym detection to recognize when a greeting word was input, in order to then output the bots standard greeting.
+
+### POS Tagging, Tokenization & Segmentation
+
+In order to better suit the keyword style bot that we have created, we needed to implement a way of understanding sentences that were input, and extract the necessary information required to generate a query that the bot can use to get a response. To do this, we used POS tagging, tokenization, and segmentation. These systems work together to process questions asked, and provide us with a query in the form of \<Noun\> \<Descriptor\> which we use to generate much more intricate and conversational dialogue.
