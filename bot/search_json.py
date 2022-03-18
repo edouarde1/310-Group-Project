@@ -1,9 +1,13 @@
 import json
+import sys
+import os
 
-f = open('atl_dict.json')
-data = json.load(f)
-
-
+try:
+    f = open('bot/atl_dict.json')
+    data = json.load(f)
+except:
+    current = os.path.dirname(os.path.realpath(__file__))
+    print(os.listdir(os.curdir))
 def search_noun_quest(noun, question):
     if noun in data:
         if question in data[noun]:

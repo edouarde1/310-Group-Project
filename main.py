@@ -1,8 +1,7 @@
-from naive_bot.naive_bot import load_data, get_response
-import bot
+import bot.boty as boty
 
 # Get Bot Dictionary
-keywords = load_data("keywords.csv")
+
 
 while True:
     response = input("\n \n Welcome to the Atlantis Chat Bot: \n \n Press 1 to Begin \n \n Press q to Quit \n \n Enter: ")

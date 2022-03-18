@@ -1,5 +1,5 @@
 import nltk
-from bot import search_json
+from boty import search_json
 import stanza
 
 # Pipeline object to access token, mwt, lemma, and depparse functions from Stanza
