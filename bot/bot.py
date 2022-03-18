@@ -16,7 +16,15 @@ responses = ["I'm sorry, I don't understand.",
 
 
 def spell_check(input):
-    # takes a string and returns a list substring of corrected words
+    """
+    Takes a string and returns a string with closest related permutation that is part of the english language.
+
+    Parameter:
+        input: a string input  
+
+    Returns:
+        correct: a corrected string output 
+    """
     spell = SpellChecker()
     err = input.split()
     correct = []
@@ -27,9 +35,24 @@ def spell_check(input):
 
 
 def get_response(query):
-    # entity_dict = get_entity_dict(ENTITY_DICT_PATH)
-    #
-    # response = []
+    """
+    This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. 
+    User input is processed using get_query_objects(), which extracts nouns and propper nouns. 
+    A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. 
+    If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, 
+    then the bot returns "Sorry can't help provide any information that relates to [whatever related noun the user entered]".
+
+    Parameter:
+        response: a string input by the user acting as the key for keywords
+        entity_dict: a .json file generated from entity_dict.py
+    
+    Returns:
+        output: a string containing the bots response
+    """
+    
+    entity_dict = get_entity_dict(ENTITY_DICT_PATH)
+
+    response = []
     # Find the objects in the user query
     for greeting in greetings:
         if greeting in query.lower().split():
