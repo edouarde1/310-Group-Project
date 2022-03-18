@@ -50,7 +50,7 @@ def get_response(query):
         output: a string containing the bots response
     """
     
-    entity_dict = get_entity_dict(ENTITY_DICT_PATH)
+    #entity_dict = get_entity_dict(ENTITY_DICT_PATH)
 
     response = []
     # Find the objects in the user query
