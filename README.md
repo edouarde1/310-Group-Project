@@ -8,18 +8,17 @@ Our project is going to be an interactive chatbot that takes on the role of a wo
 
 1. Download our GitHub repo 
 2. Open the repo using VSCode or Terminal 
-3. run `pip install nltk` and `pip install pyspellchecker` in terminal `pip install stanza`
-4. Run main.py 
+3. run `run_me_first.sh` (If you are uncomfortable running a bash script refer to dependencies.) 
+4. Run gui.py 
 
 ## Dependencies
-This bot requires nltk, pyspechecker, and stanza in order to run properly. You may have to use bot directory and execute the following code inside a test.py script that you create yourself. 
+This bot requires nltk, pyspechecker, and stanza in order to run properly. If you do not run first-time-setup.sh you will have to do the following
     
-    import stanza
-    import nltk
-    stanza.download('en')
-    nltk.download()
+    pip install nltk
+    pip install pyspellchecker
+    pip install stanza
     
-once you have done this, everything should work. 
+Then you have to run run_me_first.py so python can install the additional libraries. 
 
 ## Dataset 
 
@@ -89,15 +88,13 @@ Parameters:
  - sentence: a string 
 
 
-### unitTest.py  TODO: UPDATE THIS LATER WHEN WE ACTUALLY FIX IT 
+### unitTest.py 
 
 #### test_spell_check
 Tests functionality of `spell_check()` function in bot.py
 
-
 #### test_get_response()
 Tests functionality of `get_response(query)` function in bot.py
-
 
 #### test_load_data()
 Tests functionality of `load_data()` 
