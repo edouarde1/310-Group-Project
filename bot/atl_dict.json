@@ -16,7 +16,8 @@
         "where": "Scholars debate the location of Atlantis, but I believe it's within Lake Erie Ohio! Hidden in plain site I say!",
         "why": "Atlantis will make my career that's why! I will be world renowned!",
         "how": "I plan on getting some scuba gear to swim to Atlantis.",
-        "get": "We will bus to the docks, then we will scuba dive!"
+        "get": "We will bus to the docks, then we will scuba dive!",
+        "go": "We will go there as soon as I can get funds. Speaking of which, how much money do you have?"
     },
     "i": {
         "who": "Maybe you'll be my adventuring buddy?",
@@ -58,7 +59,8 @@
         "when": "Someone is an explorer the moment adventure sets within their hearts.",
         "where": "Explorers explore everywhere!",
         "why": "Someone chooses to be an explorer because there is something they want to see. Like how I want to see the golden city deep beneath the waves.",
-        "how": "Anyone can become an explorer just by setting off on adventure."
+        "how": "Anyone can become an explorer just by setting off on adventure.",
+        "become": "By simply setting of on an adventure!"
     },
     "sea": {
         "what": "The sea is vast and unexplored. The good news is that Atlantis is actually deep beneath Lake Erie Ohio so we will not need to go to the sea.",
@@ -118,5 +120,12 @@
         "how": "Well, that's where you come in. Would you be able to pay for the gear?",
         "find": "I'm sure someone at the docks will be selling the stuff we need!",
         "get": "We simply need some scuba gear. I'm a little short on cash though. That's where I look to you, would you be willing to fund this expedition?"
+    },
+    "monsters": {
+        "who": "The true monsters are the government of Ohio since they hide Atlantis beneath Lake Erie!",
+        "what": "There might some monsters within the city. We won't know until we're there!",
+        "where": "Monsters are everywhere! Have you seen gas prices these days? Truly monstrous...",
+        "find": "I will pack some flashlights in case we find some monsters!",
+        "fight": "You look strong enough, I'm sure we'll be fine!"
     }
 }
