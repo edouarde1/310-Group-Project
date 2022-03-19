@@ -49,23 +49,26 @@ Takes a string and returns a string with closest related permutation that is par
     
 ### gui.py
 
+### BotGUI(tk.Tk)
+The class which handles window switching and displays the alternate screens
+
 #### HomeScreen (class)
 The main title screen that shows when loading the application. 
 
 #### ChatSreen (class)
 The class that manages the chatscreen. 
 
-#### retrieve_user_message
-gets user input, spellcheck it and then generates a response from the bot module
+##### retrieve_user_message(inputField)
+gets user input, and then passes the input to the bot for processing. Recieves the updated bot response, and updates the GUI with the new response.
 
 Parameters:
 - inputField: a string which determins what field to be inputed
 
 #### show_help_popup
-Just passes a string along to the responseLablel in 
+Just passes a string along to the responseLablel in order to display the basic welcome prompt
 
 ### data_load.py
-For manageing data and searching
+For managing data and searching
 
 #### data_load
 Loads text from a file.
