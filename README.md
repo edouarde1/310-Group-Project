@@ -25,10 +25,10 @@ This bot pulls from a json file with specifically designed responses for who, wh
 
 ## Classes and Functions 
 
-### Bot.py 
+### aBot.py 
 This directory includes all the files for the bot. 
 
-####get_response
+#### get_response
 This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and proper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
 
 Parameters:
@@ -47,6 +47,22 @@ Takes a string and returns a string with closest related permutation that is par
  Returns:
  - correct: a corrected string output 
     
+### gui.py
+
+#### HomeScreen (class)
+The main title screen that shows when loading the application. 
+
+#### ChatSreen (class)
+The class that manages the chatscreen. 
+
+#### retrieve_user_message
+gets user input, spellcheck it and then generates a response from the bot module
+
+Parameters:
+- inputField: a string which determins what field to be inputed
+
+#### show_help_popup
+Just passes a string along to the responseLablel in 
 
 ### data_load.py
 For manageing data and searching
@@ -64,7 +80,7 @@ Loads text from a file.
 #### preproc
 Extracts the nouns and proper pouns from the user query. Takes a user query and runs string 
 through Stanza's Dependency Parser. More information about this library is found here: 
-(https://stanfordnlp.github.io/stanza/depparse.html)[https://stanfordnlp.github.io/stanza/depparse.html]
+https://stanfordnlp.github.io/stanza/depparse.html
 
 Parameters:
  - query: a string 
