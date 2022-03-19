@@ -1,5 +1,5 @@
 import nltk
-from bot import search_json
+from botbot import search_json
 import stanza
 
 # Pipeline object to access token, mwt, lemma, and depparse functions from Stanza
@@ -16,8 +16,13 @@ def data_load(filepath):
     # RETURNS:
     #     contents: string of raw text
 
-    with open(filepath, 'r', errors='ignore') as file:
-        contents = file.read()
+    try:    
+        file = open(filepath, 'r', errors='ignore')
+    except FileNotFoundError as f:
+        print(f)
+        
+
+    contents = file.read()
     return contents
 
 

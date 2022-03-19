@@ -1,6 +1,6 @@
 import sys
 import tkinter as tk
-import bot
+import botbot
 
 
 # Class for the Bot GUI
@@ -51,10 +51,10 @@ class ChatScreen(tk.Frame):
         for char in punctuation:
             userInput = userInput.replace(char,' ')
         # Pass input through spell checking module
-        input = bot.spell_check(userInput)
+        input = botbot.spell_check(userInput)
         print(input)
         # Get response from bot & update response label
-        self.response = bot.get_response(input)
+        self.response = botbot.get_response(input)
         print("Response", self.response)
         self.responseLabel["text"] = self.response
 
