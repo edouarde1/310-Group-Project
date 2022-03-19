@@ -18,7 +18,7 @@ This bot requires nltk, pyspechecker, and stanza in order to run properly. If yo
     pip install pyspellchecker
     pip install stanza
     
-Then you have to run run_me_first.py so python can install the additional libraries. 
+Then you have to run py_lib_install.py so python can install the additional libraries. 
 
 ## Dataset 
 This bot pulls from a json file with specifically designed responses for who, what, where, when, why style responses. Essentially, this bot smartly translates user text into queries to generate aproprait responses. 
