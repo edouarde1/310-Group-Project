@@ -15,12 +15,12 @@ def data_load(filepath):
     #
     # RETURNS:
     #     contents: string of raw text
-
+    file = None
     try:    
         file = open(filepath, 'r', errors='ignore')
     except FileNotFoundError as f:
         print(f)
-        
+        return 'Sorry! I cant come up with the words right now'
 
     contents = file.read()
     return contents

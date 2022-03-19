@@ -10,6 +10,7 @@ class TestClass(unittest.TestCase):
 
     def test_get_response(self):
         self.assertNotNone(botbot.get_response("1"),"I am unsure what you are asking me.")
+        
 
     def test_load_data(self):
         self.assertEqual(dl.data_load("file_does_not_exist.csv"),"Sorry! I cant come up with the words right now")
