@@ -21,32 +21,24 @@ This bot requires nltk, pyspechecker, and stanza in order to run properly. If yo
 Then you have to run run_me_first.py so python can install the additional libraries. 
 
 ## Dataset 
-
-#### corpus.txt
-This txt file is pulled from the [Wikipedia page for Atlantis](https://en.wikipedia.org/wiki/Atlantis). This txt file was used as the corpus for our chat bot.
-All these words are tokenized with NLTK and then implemented to a dictionary as keys as a JSON file. 
-
+This bot pulls from a json file with specifically designed responses for who, what, where, when, why style responses. Essentially, this bot smartly translates user text into queries to generate aproprait responses. 
 
 ## Classes and Functions 
 
-### Bot 
+### aBot.py 
 This directory includes all the files for the bot. 
 
-
-### main.py
-This is the main file where our program is executed. 
-
-#### get_response(response, keywords)
+#### get_response
 This function recieves the keyword dictionary, asks for user input, and returns chat bot responses. User input is processed using `get_query_objects()`, which extracts nouns and proper nouns. A for-loop iterates through each processed noun in a list and detects if the word exists in entity_dict.json. If there is a match, that means there is a chat bot response for the keyword. If there is no keyword detected in the user response, then the bot returns "Sorry can't help provide any information that relates to [*whatever related noun the user entered*]". 
 
 Parameters:
 - response: a string input by the user acting as the key for keywords
-- entity_dict: a .json file generated from entity_dict.py
+
   
 Returns:
 - output: a string containing the bots response
 
-#### spell_check(input)
+#### spell_check
 Takes a string and returns a string with closest related permutation that is part of the english language.
 
  Parameter:
@@ -55,10 +47,30 @@ Takes a string and returns a string with closest related permutation that is par
  Returns:
  - correct: a corrected string output 
     
+### gui.py
+
+### BotGUI(tk.Tk)
+The class which handles window switching and displays the alternate screens
+
+#### HomeScreen (class)
+The main title screen that shows when loading the application. 
+
+#### ChatSreen (class)
+The class that manages the chatscreen. 
+
+##### retrieve_user_message(inputField)
+gets user input, and then passes the input to the bot for processing. Recieves the updated bot response, and updates the GUI with the new response.
+
+Parameters:
+- inputField: a string which determins what field to be inputed
+
+#### show_help_popup
+Just passes a string along to the responseLablel in order to display the basic welcome prompt
 
 ### data_load.py
+For managing data and searching
 
-#### data_load(filepath):
+#### data_load
 Loads text from a file.
 
  Parameters:
@@ -68,10 +80,10 @@ Loads text from a file.
   - contents: string of raw text
   
 
-#### preproc(filepath)
+#### preproc
 Extracts the nouns and proper pouns from the user query. Takes a user query and runs string 
 through Stanza's Dependency Parser. More information about this library is found here: 
-(https://stanfordnlp.github.io/stanza/depparse.html)[https://stanfordnlp.github.io/stanza/depparse.html]
+https://stanfordnlp.github.io/stanza/depparse.html
 
 Parameters:
  - query: a string 
@@ -80,23 +92,58 @@ Parameters:
 - obj_list: a list nouns and proper nouns from the user query 
 
 
-#### dependencyParser(sentence)
+#### dependencyParser
 Helper utility used to extract the depencies from a sentence. Runs the dp pipeline object 
 in order to run depparse, lemma, and pos tagginig.
 
 Parameters: 
  - sentence: a string 
 
+### syn_detection.py
 
-### unitTest.py 
+#### detect_syn
+This function takes a word and uses wordnet in order to return a list of asociated synonyms with our word,.
+
+Parameters
+- input : word to get inputs from 
+
+Returns
+- synonyms: list of synonyms associated with said words. 
+
+### search_json.py
+
+#### search_noun_quest
+takes a noun and searches for related question style keywords. 
+
+Parameters
+- noun, question: noun and question. Question is mostly used as an adverb in this case.
+
+Returns
+- data[noun][quest]: returns a string associated with indexed value
+
+#### get_nouns
+returns a list of all nouns within json file
+
+Returns
+ - nounList: list of nouns 
+
+#### get_verbs
+Parameters
+- noun: a string 
+ 
+Returns
+ - questList: list of adverbs associated with said noun
+
+
+### unitTest.py  FIX THIS 
 
 #### test_spell_check
 Tests functionality of `spell_check()` function in bot.py
 
-#### test_get_response()
+#### test_get_response
 Tests functionality of `get_response(query)` function in bot.py
 
-#### test_load_data()
+#### test_load_data
 Tests functionality of `load_data()` 
 
 ## New Features
