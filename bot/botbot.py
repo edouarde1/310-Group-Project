@@ -3,6 +3,10 @@ import syn_detection
 from data_utils.data_load import get_query_objects
 from spellchecker import SpellChecker
 import random
+import wikipediaapi as wapi
+
+#Setting the language, the WIKI can be changed to HTML to output in HTML format.
+wiki = wapi.Wikipedia( language = 'en', extract_format=wapi.ExtractFormat.WIKI)
 
 TEXT_BODY_PATH = './text/atlantis.txt'
 ENTITY_DICT_PATH = 'data_utils/entity_dict.json'
@@ -57,6 +61,17 @@ def get_response(query):
     for greeting in greetings:
         if greeting in query.lower().split():
             return "Hi! Great to meet you. Are you going to ask me some questions?"
+    
+    if "define" in query.lower().split():
+        input = query.lower()
+        pageName = input.replace("define ", "", 1)
+        page = wiki.page(pageName.lower())
+        if page.exists:
+            summ = page.summary[0:1000].replace(". ", "\n", 1).splitlines()
+            return summ[0] + ".\nThe link for the full wikipedia article is " + page.fullurl
+        else:
+            return "This page does not exist."
+
     query_objects = get_query_objects(query)
     if query_objects is None:
         return responses[random.randint(0, len(responses) - 1)]

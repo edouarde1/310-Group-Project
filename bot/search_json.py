@@ -1,6 +1,6 @@
 import json
 
-f = open("./atl_dict.json")
+f = open("./bot/atl_dict.json")
 data = json.load(f)
 
 
